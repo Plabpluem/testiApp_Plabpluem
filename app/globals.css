@@ -26,8 +26,43 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .buttonColor{
+    background-color: #0AA8C2;
+  }
+  .borderButtonColor{
+    border-color: #0AA8C2;
+  }
+  .textBlue{
+    color: #0AA8C2;
+  }
+  .backgroundMain{
+    background-color: #05212A;
+  }
+  .backgroundHome{
+    background-color: #F0F2F5;
+  }
+  .animateFade{
+    animation: fadeInOut 3s forwards ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+    0%,100%{
+      opacity: 0;
+    }
+    10%,80%{
+      opacity: 1;
+    }
   }
 }
