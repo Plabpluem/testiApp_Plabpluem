@@ -1,7 +1,7 @@
 "use client";
-import { Country, State, City } from "country-state-city";
+import { Country, State } from "country-state-city";
 import { useUserAuth } from "../context/AuthContext";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { updateAddress } from "@/redux/slices/addressSlice";

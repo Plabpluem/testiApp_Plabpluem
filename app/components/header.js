@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import CartBox from "./cartBox";
 import UserHeaderBox from "./userHeaderBox";
 import { useState } from "react";
 import { useUserAuth } from "../context/AuthContext";
@@ -63,7 +62,6 @@ const HeaderMain = () => {
           )}
         </div>
       </header>
-      {/* {showCart && <CartBox showCart={(show) => setShowCart(show)} />} */}
     </>
   );
 };

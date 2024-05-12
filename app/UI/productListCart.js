@@ -1,11 +1,9 @@
 import { changeAmount, deleteProduct } from "@/redux/slices/cartSlice";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductListCart = ({ detail,index,showConfirm }) => {
   const dispatch = useDispatch()
   const cart = useSelector(state => state.cart)
-  const [input,setInput] = useState(0)
   const productAmount = cart.items.find(item => item.id === detail.id).amount
 
   const onDeleteProductHandler = (id) => {

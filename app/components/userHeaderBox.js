@@ -23,7 +23,7 @@ const UserHeaderBox = (props) => {
     if(userContainer.current && !userContainer.current.contains(e.target)){
       props.showNavbar(false)
     }
-  },[])
+  },[props])
 
   useEffect(()=>{
     document.addEventListener("click", onClickOutUsercontainer);

@@ -1,32 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProductBox from "./UI/productBox";
-import { useUserAuth } from "./context/AuthContext";
 import NotiAddCart from "./UI/notiAddCart";
 import Loading from "./UI/loading";
+import { getProducts } from "@/lib/products";
 
 export default function HomePage() {
-  const [products, setProducts] = useState(null);
   const [showNotify, setShowNotify] = useState(false);
-  const apiProducts = async () => {
-    try {
-      const response = await fetch("https://fakestoreapi.com/products", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const productsapi = await response.json();
-      setProducts(productsapi);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const [products, setProducts] = useState();
 
   useEffect(() => {
-    apiProducts();
+    const fetchProduct = async () => {
+      const productsData = await getProducts();
+      setProducts(productsData);
+    };
+    fetchProduct();
   }, []);
 
   useEffect(() => {
@@ -54,7 +43,6 @@ export default function HomePage() {
       ) : (
         <Loading />
       )}
-
       {showNotify && <NotiAddCart />}
     </main>
   );
