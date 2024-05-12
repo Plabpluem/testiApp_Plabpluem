@@ -3,7 +3,6 @@ import { getCookie, setCookie } from "react-use-cookie";
 const { createSlice } = require("@reduxjs/toolkit");
 
 const addressCookie = getCookie('address')
-const userAuth = localStorage.getItem('user')
 
 const initialStateAddress = {
     info: null,

@@ -80,7 +80,6 @@ const AddressPage = () => {
               name="name"
               className="p-2 outline-gray-400"
               onChange={e => setNameUser(e.target.value)}
-              // ref={nameRef}
               value={nameUser}
               required
             />
@@ -93,7 +92,6 @@ const AddressPage = () => {
               className="p-2 outline-gray-400"
               onChange={e => setStreetUser(e.target.value)}
               value={streetUser}
-              // ref={streetRef}
               required
             />
           </div>
@@ -105,7 +103,6 @@ const AddressPage = () => {
               className="p-2 outline-gray-400"
               onChange={e => setCityUser(e.target.value)}
               value={cityUser}
-              // ref={cityRef}
               required
             />
           </div>
@@ -115,7 +112,6 @@ const AddressPage = () => {
               name="state"
               className="py-2 outline-gray-400"
               onChange={e => setStateUser(e.target.value)}
-              // ref={stateRef}
               required
             >
               {addressInfo.info ? <option value={stateUser} selected disabled hidden>{stateUser}</option> :<option value="none" selected disabled hidden>Select state</option>}
@@ -134,7 +130,6 @@ const AddressPage = () => {
               className="p-2 outline-gray-400"
               onChange={e => setZipUser(e.target.value)}
               value={zipUser}
-              // ref={zipRef}
               required
             />
           </div>
@@ -144,7 +139,6 @@ const AddressPage = () => {
               name="Country"
               className="py-2 outline-gray-400"
               onChange={onChangeCountry}
-              // ref={countryRef}
               required
             >
               {countrys.map((country, index) => (
@@ -160,7 +154,6 @@ const AddressPage = () => {
               type="text"
               name="phone"
               className="p-2 outline-gray-400"
-              // ref={phoneRef}
               onChange={e => setPhoneUser(e.target.value)}
               value={phoneUser}
             />

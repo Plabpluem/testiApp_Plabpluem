@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const {login,user}=useUserAuth()
+  const {login}=useUserAuth()
   const email = useRef()
   const password = useRef()
   const [error,setError] = useState(null)
@@ -16,7 +16,6 @@ export default function LoginPage() {
     e.preventDefault()
     try {
       await login(email.current.value,password.current.value)
-      localStorage.setItem('user',email.current.value)
       router.push('/')
     } catch (err) {
       setError("Incorrect email or password")
